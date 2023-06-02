@@ -2,10 +2,15 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      render json: {msg: "Post creation successful"}
+      flash[:success] = "Post created"
+      redirect_to @post, notice: "Post was successfully created."
     else
-      render json: {msg: "Post creation failed"}
+      render :new
     end
+  end
+
+  def new
+    @post = Post.new
   end
 
   private
