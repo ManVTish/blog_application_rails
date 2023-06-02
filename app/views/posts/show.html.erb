@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @post.body %>
+</p>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
+<%= render "comments/form", comment: @comment%>
+
+<table>
+  <thead>
+  <tr>
+    <th>Comment</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @post.comments.each do |comm| %>
+    <tr>
+      <td><%= comm.commented %></td>
+      <td><%= link_to 'Edit', edit_post_comment_path(comm) %></td>
+      <td><%= link_to 'Destroy', post_comment_path, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

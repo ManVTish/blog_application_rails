@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      flash[:success] = "Post created"
+      flash[:alert] = "Post created"
       redirect_to @post, notice: "Post was successfully created."
     else
       render :new
@@ -13,9 +13,26 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def index
+    @posts = Post.all
+  end
+
+  def show
+    @post = Post.find(params[:id])
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    if @post.destroy
+      redirect_to post_path, notice: "Post deleted"
+    else
+      redirect_to notice: "post not found"
+    end
+  end
+
   private
 
   def post_params
-    params.require(:posts).permit(:title, :body)
+    params.require(:post).permit(:title, :body)
   end
 end
