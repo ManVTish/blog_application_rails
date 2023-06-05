@@ -1,0 +1,21 @@
+<%= @post.title %>
+<br>
+<%= @post.body %>
+<table>
+  <thead>
+  <tr>
+    <th>Comments</th>
+  </tr>
+  </thead>
+
+  <tbody>
+<% @post.comments.each do |comm| %>
+    <tr>
+      <td><%= comm.commented %></td>
+<!--      <td><%#= link_to 'Edit', edit_post_comment_path(comm) %></td>-->
+<!--      <td><%#= link_to 'Destroy', post_comment_path, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %></td>-->
+    </tr>
+<% end %>
+  </tbody>
+</table>
+<%= link_to 'Back', post_path(@post.id) %>
