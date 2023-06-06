@@ -68,7 +68,6 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.4)
       public_suffix (>= 2.0.2, < 6.0)
-    bcrypt (3.1.18)
     bindex (0.8.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
@@ -82,30 +81,22 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
-    childprocess (4.1.0)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     date (3.3.3)
     debug (1.8.0)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
-    devise (4.9.2)
-      bcrypt (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (>= 4.1.0)
-      responders
-      warden (~> 1.2.3)
     erubi (1.12.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
-    i18n (1.14.0)
+    i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.1.6)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
-    iniparse (1.5.0)
     io-console (0.6.0)
-    irb (1.6.4)
+    irb (1.7.0)
       reline (>= 0.3.0)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
@@ -136,12 +127,6 @@ GEM
     nio4r (2.5.9)
     nokogiri (1.15.2-x86_64-linux)
       racc (~> 1.4)
-    orm_adapter (0.5.0)
-    overcommit (0.60.0)
-      childprocess (>= 0.6.3, < 5)
-      iniparse (~> 1.4)
-      rexml (~> 3.2)
-    pg (1.5.3)
     public_suffix (5.0.1)
     puma (5.6.5)
       nio4r (~> 2.0)
@@ -179,11 +164,8 @@ GEM
     rake (13.0.6)
     redis (4.8.1)
     regexp_parser (2.8.0)
-    reline (0.3.4)
+    reline (0.3.5)
       io-console (~> 0.5)
-    responders (3.1.0)
-      actionpack (>= 5.2)
-      railties (>= 5.2)
     rexml (3.2.5)
     rubyzip (2.3.2)
     selenium-webdriver (4.9.1)
@@ -197,9 +179,8 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    sqlite3 (1.6.3-x86_64-linux)
     stimulus-rails (1.2.1)
-      railties (>= 6.0.0)
-    tailwindcss-rails (2.0.29-x86_64-linux)
       railties (>= 6.0.0)
     thor (1.2.2)
     timeout (0.3.2)
@@ -209,8 +190,6 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    warden (1.2.9)
-      rack (>= 2.0.9)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -235,18 +214,15 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
-  devise
   importmap-rails
   jbuilder
-  overcommit
-  pg (~> 1.1)
   puma (~> 5.0)
-  rails (~> 7.0.4, >= 7.0.4.3)
+  rails (~> 7.0.5)
   redis (~> 4.0)
   selenium-webdriver
   sprockets-rails
+  sqlite3 (~> 1.4)
   stimulus-rails
-  tailwindcss-rails
   turbo-rails
   tzinfo-data
   web-console
