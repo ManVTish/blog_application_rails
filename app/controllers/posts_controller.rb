@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
+    authorize @post
     if @post.save
       flash[:alert] = "Post created"
       redirect_to @post, notice: "Post was successfully created."
@@ -15,6 +16,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    authorize @posts
   end
 
   def show
