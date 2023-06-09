@@ -32,6 +32,7 @@ gem "jbuilder"
 # Use Redis adapter to run Action Cable in production
 gem "redis", "~> 4.0"
 
+gem "sidekiq", "~> 7.1.1"
 gem 'pundit'
 gem 'activeadmin'
 gem "devise"
